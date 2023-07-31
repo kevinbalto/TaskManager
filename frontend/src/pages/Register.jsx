@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
 import Alert from "../components/Alert"
-import axios from "axios"
+import axiosClient from "../config/axiosClient"
 
 const Register = () => {
 
@@ -30,7 +30,7 @@ const Register = () => {
       return
     }
 
-    if(password < 6) {
+    if(password.length < 6) {
       setAlert({
         msg: 'Not enough characters, please add more than 6 characters',
         error: true
@@ -41,13 +41,19 @@ const Register = () => {
     setAlert({})
 
     try {
-      const { data } = await axios.post('http://localhost:4000/api/users', 
+      const { data } = await axiosClient.post(`/users`, 
       {name, email, password})
 
       setAlert({
         msg: data.msg,
         error: false
       })
+
+      setName('')
+      setEmail('')
+      setPassword('')
+      setRepeatPassword('')
+
     } catch (error) {
       setAlert({
         msg: error.response.data.msg,
