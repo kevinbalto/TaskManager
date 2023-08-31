@@ -11,8 +11,9 @@ const Sidebar = () => {
         <p className='text-xl font-bold'>Hola: {auth.name}</p>
         <Link
             to="create-project"
-            className='bg-blue-600 w-full p-3 text-white
-            font-bold block mt-5 text-center rounded-lg'
+            className='bg-sky-600 w-full p-3 text-white
+            font-bold block mt-5 text-center rounded-lg
+            cursor-pointer hover:bg-sky-700 transition-colors' 
         >
             New Project
         </Link>

@@ -21,8 +21,9 @@ export const Header = () => {
                 </Link>
                 <button
                     type='button'
-                    className='text-white text-sm bg-red-600 p-3 rounded font-bold'
-                >
+                    className='text-white text-sm bg-red-600 p-3 rounded font-bold
+                    cursor-pointer hover:bg-red-700 transition-colors'
+                > 
                     Log out
                 </button>
             </div>

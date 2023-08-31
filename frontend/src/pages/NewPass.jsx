@@ -41,7 +41,6 @@ const NewPass = () => {
     try {
       const url = `/users/forgot-password/${token}`
       const { data } = await axiosClient.post(url, { password })
-      console.log(data.msg);
       setAlert({
         msg: data.msg,
         error: false
